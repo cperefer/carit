@@ -1,13 +1,13 @@
 import React from 'react'
-import { Text, View } from 'react-native'
-import { AnswerContainerComponent } from '@components/visual'
+import { View } from 'react-native'
+import { AnswersContainerComponent } from '@components/visual'
 import { CountdownComponent } from '@components/game'
 
 export const AnswerComponent = () => {
   return (
     <View>
       <CountdownComponent />
-      <AnswerContainerComponent />
+      <AnswersContainerComponent />
     </View>
   )
 }
