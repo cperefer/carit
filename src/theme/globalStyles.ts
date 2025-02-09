@@ -10,6 +10,12 @@ export const globalStyles = StyleSheet.create({
         height: "100%",
         width: "100%",
     },
+    fullHeight: {
+        height: "100%",
+    },
+    fullWidth: {
+        width: "100%",
+    },
     flex: {
         display: "flex",
     },
