@@ -2,15 +2,26 @@ import { globalStyles } from '@/theme/globalStyles';
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { AnswerOptionComponent } from '@components/game';
+import { AnswerOption } from '@/common/Types';
 
-export const AnswersContainerComponent = () => {
+export const AnswersContainerComponent = (
+    {answers = [
+      {answerOption: "Respuesta 1", isCorrect: false}, 
+      {answerOption: "Respuesta 2", isCorrect: false}, 
+      {answerOption: "Respuesta 3", isCorrect: false}, 
+      {answerOption: "Respuesta 4", isCorrect: true}
+    ]}
+  ) => {
+
   return (
     <View style={[globalStyles.flex, globalStyles.center, globalStyles.full, styles.style]}>
       <View style={[globalStyles.full, globalStyles.flex, globalStyles.center, styles.gridContainer]}>
-          <AnswerOptionComponent answerOption="Respuesta 1"/>
-          <AnswerOptionComponent answerOption="Respuesta 2"/>
-          <AnswerOptionComponent answerOption="Respuesta 3"/>
-          <AnswerOptionComponent answerOption="Respuesta 4"/>
+          {
+            answers.map((answerOutput:AnswerOption) => (
+              <AnswerOptionComponent answerOption={answerOutput.answerOption} isCorrect={answerOutput.isCorrect} />
+            ))
+          }
+
       </View>
     </View>
   )

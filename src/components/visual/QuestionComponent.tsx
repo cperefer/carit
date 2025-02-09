@@ -1,14 +1,11 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-import { globalStyles } from '../../theme/globalStyles';
-
-interface Props {
-  question?: String
-}
+import { globalStyles } from '@/theme/globalStyles';
+import { Question } from '@/common/Types';
 
 const dummyQuestion:String = "En 'Harry Potter y La Cámara Secreta', ¿qué modelo de coche es con el que Ron y Harry llegan a Hogwarts?";
 
-export const QuestionComponent = ({question = dummyQuestion}:Props) => {
+export const QuestionComponent = ({question = dummyQuestion}:Question) => {
   return (
     <View 
       style={[globalStyles.full, globalStyles.center, globalStyles.flex]}

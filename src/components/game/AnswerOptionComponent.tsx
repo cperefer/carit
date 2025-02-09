@@ -1,12 +1,9 @@
+import { AnswerOption } from '@/common/Types'
 import { globalStyles } from '@/theme/globalStyles'
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
-interface Props {
-    answerOption?: String
-}
-
-export const AnswerOptionComponent = ({answerOption}:Props) => {
+export const AnswerOptionComponent = ({answerOption, isCorrect}:AnswerOption) => {
   return (
     <View style={[globalStyles.flex, globalStyles.center, styles.answerOption]}>
       <Text>{answerOption}</Text>
