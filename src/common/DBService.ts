@@ -1,6 +1,6 @@
 import { enablePromise, openDatabase, SQLiteDatabase } from "react-native-sqlite-storage";
 import { DATABASE } from "@/constants";
-import { Category, QuestionDB } from "./Types";
+import { Category, GameDB, PlayerDB, QuestionDB } from "./Types";
 
 const {TABLES} = DATABASE;
 
@@ -16,7 +16,7 @@ const initDatabase = async (db: SQLiteDatabase) => {
     _initData(db);
 }
 
-const getAll  = async (tableName:String, db: SQLiteDatabase) => {
+const getAll = async (tableName:String, db: SQLiteDatabase) => {
     const ret:any = [];
     const results = await db.executeSql(
         `SELECT * FROM ${tableName}`
@@ -29,6 +29,50 @@ const getAll  = async (tableName:String, db: SQLiteDatabase) => {
     });
   
     return ret;
+}
+
+const getBy = async (tableName:String, field:String, value:any, db: SQLiteDatabase) => {
+    const ret:any = [];
+    const results = await db.executeSql(
+        `SELECT * FROM ${tableName} WHERE ${field} = ${value}`
+    );
+
+    results.forEach(result => {
+        for (let index = 0; index < result.rows.length; index++) {
+            ret.push(result.rows.item(index))
+        }
+    });
+
+    return ret;
+}
+
+const getLike = async (tableName:String, field:String, value:any, db: SQLiteDatabase) => {
+    const ret:any = [];
+    const results = await db.executeSql(
+        `SELECT * FROM ${tableName} WHERE ${field} LIKE '%${value}%'`
+    );
+
+    results.forEach(result => {
+        for (let index = 0; index < result.rows.length; index++) {
+            ret.push(result.rows.item(index))
+        }
+    });
+
+    return ret;
+}
+
+const insertPlayer = async ({username, avatar}:PlayerDB, db: SQLiteDatabase) => {
+    const query =
+        `INSERT OR REPLACE INTO ${TABLES.PLAYERS}(id, username, avatar) values (NULL, '${username}', '${avatar}')`;
+
+    await db.executeSql(query);
+}
+
+const insertGame = async ({players}:GameDB, db: SQLiteDatabase) => {
+    const query =
+        `INSERT OR REPLACE INTO ${TABLES.GAMES}(id, players) values (NULL, '${players}')`;
+
+    await db.executeSql(query);
 }
 
 const _initTables = async (db: SQLiteDatabase) => {
@@ -135,13 +179,11 @@ const _initGamesCategoriesTable = async (db: SQLiteDatabase) => {
 
 const _initCategories = async (db: SQLiteDatabase) => {
     const data = require('@/resources/categories.json');
-    // console.log(data)
     await _insertCategories(data, db);
 }
 
 const _initQuestions = async (db: SQLiteDatabase) => {
     const data = require('@/resources/questions.json');
-    // console.log(data)
     await _insertQuestions(data, TABLES.QUESTIONS , db);
 }
 
@@ -151,18 +193,15 @@ const _insertCategories = async (data: any, db: SQLiteDatabase) => {
             data.map(
                 (item:Category) => `(${item.id}, '${item.name}')`).join(',')
     
-    // console.log(query);
     await db.executeSql(query);
 }
 
 const _insertQuestions = async (data: any, tableName: String, db: SQLiteDatabase) => {
-    // console.log(Object.keys(data[0]));
     const query =
         `INSERT OR REPLACE INTO ${tableName}(id, ${Object.keys(data[0]).join(', ')}) values` +
             data.map(
                 (item:QuestionDB, id:Number) => `(${id}, '${item.question}', '${item.answer1}', '${item.answer2}', '${item.answer3}', '${item.answer4}', ${item.category}, '${item.correctAnswer}')`).join(',')
     
-    // console.log(query);
     await db.executeSql(query);
 }
 
@@ -175,4 +214,12 @@ const _dropDatabase = async (db: SQLiteDatabase) => {
     await db.executeSql(`DROP TABLE IF EXISTS ${TABLES.GAMES_CATEGORIES}`);
 }
 
-export { getDBConnection, initDatabase, getAll };
+export { 
+    getDBConnection, 
+    initDatabase,
+    insertGame,
+    insertPlayer,
+    getAll, 
+    getBy,
+    getLike,
+};
