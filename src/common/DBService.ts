@@ -16,6 +16,21 @@ const initDatabase = async (db: SQLiteDatabase) => {
     _initData(db);
 }
 
+const getAll  = async (tableName:String, db: SQLiteDatabase) => {
+    const ret:any = [];
+    const results = await db.executeSql(
+        `SELECT * FROM ${tableName}`
+    );
+
+    results.forEach(result => {
+        for (let index = 0; index < result.rows.length; index++) {
+            ret.push(result.rows.item(index))
+        }
+    });
+  
+    return ret;
+}
+
 const _initTables = async (db: SQLiteDatabase) => {
     await _initCategoriesTable(db);
     await _initPlayersTable(db);
@@ -126,8 +141,8 @@ const _initCategories = async (db: SQLiteDatabase) => {
 
 const _initQuestions = async (db: SQLiteDatabase) => {
     const data = require('@/resources/questions.json');
-    console.log(data)
-    await _insertQuestions(data, db);
+    // console.log(data)
+    await _insertQuestions(data, TABLES.QUESTIONS , db);
 }
 
 const _insertCategories = async (data: any, db: SQLiteDatabase) => {
@@ -136,17 +151,18 @@ const _insertCategories = async (data: any, db: SQLiteDatabase) => {
             data.map(
                 (item:Category) => `(${item.id}, '${item.name}')`).join(',')
     
-    console.log(query);
+    // console.log(query);
     await db.executeSql(query);
 }
 
-const _insertQuestions = async (data: any, db: SQLiteDatabase) => {
+const _insertQuestions = async (data: any, tableName: String, db: SQLiteDatabase) => {
+    // console.log(Object.keys(data[0]));
     const query =
-        `INSERT OR REPLACE INTO ${TABLES.QUESTIONS}(id, question, answer1, answer2, answer3, answer4, category, correctAnswer) values` +
+        `INSERT OR REPLACE INTO ${tableName}(id, ${Object.keys(data[0]).join(', ')}) values` +
             data.map(
-                (item:QuestionDB, id:Number) => `(${id}, '${item.question}', '${item.answer1}', '${item.answer2}', '${item.answer3}', '${item.answer4}', ${item.category} '${item.correctAnswer}')`).join(',')
+                (item:QuestionDB, id:Number) => `(${id}, '${item.question}', '${item.answer1}', '${item.answer2}', '${item.answer3}', '${item.answer4}', ${item.category}, '${item.correctAnswer}')`).join(',')
     
-    console.log(query);
+    // console.log(query);
     await db.executeSql(query);
 }
 
@@ -159,4 +175,4 @@ const _dropDatabase = async (db: SQLiteDatabase) => {
     await db.executeSql(`DROP TABLE IF EXISTS ${TABLES.GAMES_CATEGORIES}`);
 }
 
-export { getDBConnection, initDatabase };
+export { getDBConnection, initDatabase, getAll };
