@@ -1,0 +1,200 @@
+[
+    {
+        "question": "¿En qué año ganó Argentina su primer Mundial de Fútbol?",
+        "answer1": "1978",
+        "answer2": "1986",
+        "answer3": "2002",
+        "answer4": "1930",
+        "category": 0,
+        "correctAnswer": "1"
+    },
+    {
+        "question": "¿Cuál es el metal más abundante en la corteza terrestre?",
+        "answer1": "Hierro",
+        "answer2": "Aluminio",
+        "answer3": "Cobre",
+        "answer4": "Plata",
+        "category": 1,
+        "correctAnswer": "2"
+    },
+    {
+        "question": "¿Cuál es la película con más premios Oscar ganados?",
+        "answer1": "Titanic",
+        "answer2": "El Señor de los Anillos: El Retorno del Rey",
+        "answer3": "Ben-Hur",
+        "answer4": "Avatar",
+        "category": 2,
+        "correctAnswer": "2"
+    },
+    {
+        "question": "¿Quién fue el primer presidente de los Estados Unidos?",
+        "answer1": "Thomas Jefferson",
+        "answer2": "John Adams",
+        "answer3": "George Washington",
+        "answer4": "Abraham Lincoln",
+        "category": 3,
+        "correctAnswer": "3"
+    },
+    {
+        "question": "¿Cuántos jugadores conforman un equipo de fútbol en el campo?",
+        "answer1": "9",
+        "answer2": "10",
+        "answer3": "11",
+        "answer4": "12",
+        "category": 0,
+        "correctAnswer": "3"
+    },
+    {
+        "question": "¿Qué científico formuló la teoría de la relatividad?",
+        "answer1": "Isaac Newton",
+        "answer2": "Nikola Tesla",
+        "answer3": "Albert Einstein",
+        "answer4": "Stephen Hawking",
+        "category": 1,
+        "correctAnswer": "3"
+    },
+    {
+        "question": "¿En qué año se estrenó la película 'El Padrino'?",
+        "answer1": "1972",
+        "answer2": "1980",
+        "answer3": "1965",
+        "answer4": "1990",
+        "category": 2,
+        "correctAnswer": "1"
+    },
+    {
+        "question": "¿En qué año comenzó la Segunda Guerra Mundial?",
+        "answer1": "1914",
+        "answer2": "1939",
+        "answer3": "1945",
+        "answer4": "1929",
+        "category": 3,
+        "correctAnswer": "2"
+    },
+    {
+        "question": "¿Qué selección ha ganado más Copas del Mundo de fútbol?",
+        "answer1": "Argentina",
+        "answer2": "Alemania",
+        "answer3": "Brasil",
+        "answer4": "Italia",
+        "category": 0,
+        "correctAnswer": "3"
+    },
+    {
+        "question": "¿Qué planeta es conocido como el planeta rojo?",
+        "answer1": "Júpiter",
+        "answer2": "Marte",
+        "answer3": "Venus",
+        "answer4": "Saturno",
+        "category": 1,
+        "correctAnswer": "2"
+    },
+    {
+        "question": "¿Cuál es el río más largo del mundo?",
+        "answer1": "Amazonas",
+        "answer2": "Nilo",
+        "answer3": "Misisipi",
+        "answer4": "Yangtsé",
+        "category": 1,
+        "correctAnswer": "1"
+    },
+    {
+        "question": "¿Qué actor interpretó a Iron Man en el Universo Cinematográfico de Marvel?",
+        "answer1": "Chris Evans",
+        "answer2": "Robert Downey Jr.",
+        "answer3": "Chris Hemsworth",
+        "answer4": "Mark Ruffalo",
+        "category": 2,
+        "correctAnswer": "2"
+    },
+    {
+        "question": "¿Cuál es el océano más grande del mundo?",
+        "answer1": "Atlántico",
+        "answer2": "Índico",
+        "answer3": "Pacífico",
+        "answer4": "Ártico",
+        "category": 1,
+        "correctAnswer": "3"
+    },
+    {
+        "question": "¿Quién dirigió la película 'Pulp Fiction'?",
+        "answer1": "Steven Spielberg",
+        "answer2": "Quentin Tarantino",
+        "answer3": "Martin Scorsese",
+        "answer4": "Christopher Nolan",
+        "category": 2,
+        "correctAnswer": "2"
+    },
+    {
+        "question": "¿En qué año cayó el Muro de Berlín?",
+        "answer1": "1985",
+        "answer2": "1987",
+        "answer3": "1989",
+        "answer4": "1991",
+        "category": 3,
+        "correctAnswer": "3"
+    },
+    {
+        "question": "¿Cuál es el país con más Copas del Mundo de fútbol ganadas?",
+        "answer1": "Argentina",
+        "answer2": "Alemania",
+        "answer3": "Brasil",
+        "answer4": "Italia",
+        "category": 0,
+        "correctAnswer": "3"
+    },
+    {
+        "question": "¿Qué científico descubrió la penicilina?",
+        "answer1": "Marie Curie",
+        "answer2": "Alexander Fleming",
+        "answer3": "Louis Pasteur",
+        "answer4": "Joseph Lister",
+        "category": 1,
+        "correctAnswer": "2"
+    },
+    {
+        "question": "¿Qué película ganó el Oscar a Mejor Película en 1994?",
+        "answer1": "Forrest Gump",
+        "answer2": "Pulp Fiction",
+        "answer3": "El Rey León",
+        "answer4": "Cadena Perpetua",
+        "category": 2,
+        "correctAnswer": "1"
+    },
+    {
+        "question": "¿Quién fue el líder de la Revolución Rusa de 1917?",
+        "answer1": "Lenin",
+        "answer2": "Stalin",
+        "answer3": "Trotsky",
+        "answer4": "Marx",
+        "category": 3,
+        "correctAnswer": "1"
+    },
+    {
+        "question": "¿Cuántos anillos de la NBA ganó Michael Jordan con los Chicago Bulls?",
+        "answer1": "4",
+        "answer2": "5",
+        "answer3": "6",
+        "answer4": "7",
+        "category": 0,
+        "correctAnswer": "3"
+    },
+    {
+        "question": "¿Qué gas es fundamental para la respiración de los seres humanos?",
+        "answer1": "Oxígeno",
+        "answer2": "Nitrógeno",
+        "answer3": "Dióxido de carbono",
+        "answer4": "Hidrógeno",
+        "category": 1,
+        "correctAnswer": "1"
+    },
+    {
+        "question": "¿Qué actor interpretó a Jack en 'Titanic'?",
+        "answer1": "Brad Pitt",
+        "answer2": "Leonardo DiCaprio",
+        "answer3": "Tom Cruise",
+        "answer4": "Johnny Depp",
+        "category": 2,
+        "correctAnswer": "2"
+    }
+]

@@ -1,5 +1,6 @@
 import { enablePromise, openDatabase, SQLiteDatabase } from "react-native-sqlite-storage";
 import { DATABASE } from "@/constants";
+import { Category, QuestionDB } from "./Types";
 
 const {TABLES} = DATABASE;
 
@@ -10,6 +11,12 @@ const getDBConnection = async () => {
 }
 
 const initDatabase = async (db: SQLiteDatabase) => {
+    _dropDatabase(db);
+    _initTables(db);
+    _initData(db);
+}
+
+const _initTables = async (db: SQLiteDatabase) => {
     await _initCategoriesTable(db);
     await _initPlayersTable(db);
     await _initGamesTable(db);
@@ -17,12 +24,17 @@ const initDatabase = async (db: SQLiteDatabase) => {
     await _initAuxTables(db);
 }
 
+const _initData = async (db: SQLiteDatabase) => {
+    _initCategories(db);
+    _initQuestions(db);
+}
+
 const _initCategoriesTable = async (db: SQLiteDatabase) => {
     await db.executeSql(
         `CREATE TABLE IF NOT EXISTS ${TABLES.CATEGORIES}(
             id INTEGER PRIMARY KEY,
             name TEXT NOT NULL,
-            timesAppeared INTEGER DEFAULT 0,
+            timesAppeared INTEGER DEFAULT 0
         );`
     );
 }
@@ -104,6 +116,38 @@ const _initGamesCategoriesTable = async (db: SQLiteDatabase) => {
                 REFERENCES categories(id)
         );`
     );
+}
+
+const _initCategories = async (db: SQLiteDatabase) => {
+    const data = require('@/resources/categories.json');
+    // console.log(data)
+    await _insertCategories(data, db);
+}
+
+const _initQuestions = async (db: SQLiteDatabase) => {
+    const data = require('@/resources/questions.json');
+    console.log(data)
+    await _insertQuestions(data, db);
+}
+
+const _insertCategories = async (data: any, db: SQLiteDatabase) => {
+    const query =
+        `INSERT OR REPLACE INTO ${TABLES.CATEGORIES}(id, name) values` +
+            data.map(
+                (item:Category) => `(${item.id}, '${item.name}')`).join(',')
+    
+    console.log(query);
+    await db.executeSql(query);
+}
+
+const _insertQuestions = async (data: any, db: SQLiteDatabase) => {
+    const query =
+        `INSERT OR REPLACE INTO ${TABLES.QUESTIONS}(id, question, answer1, answer2, answer3, answer4, category, correctAnswer) values` +
+            data.map(
+                (item:QuestionDB, id:Number) => `(${id}, '${item.question}', '${item.answer1}', '${item.answer2}', '${item.answer3}', '${item.answer4}', ${item.category} '${item.correctAnswer}')`).join(',')
+    
+    console.log(query);
+    await db.executeSql(query);
 }
 
 const _dropDatabase = async (db: SQLiteDatabase) => {
