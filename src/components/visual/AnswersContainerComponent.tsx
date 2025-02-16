@@ -17,8 +17,8 @@ export const AnswersContainerComponent = (
     <View style={[globalStyles.flex, globalStyles.center, globalStyles.full, styles.style]}>
       <View style={[globalStyles.full, globalStyles.flex, globalStyles.center, styles.gridContainer]}>
           {
-            answers.map((answerOutput:AnswerOption) => (
-              <AnswerOptionComponent answerOption={answerOutput.answerOption} isCorrect={answerOutput.isCorrect} />
+            answers.map((answerOutput:AnswerOption, index) => (
+              <AnswerOptionComponent key={index} answerOption={answerOutput.answerOption} isCorrect={answerOutput.isCorrect} />
             ))
           }
 
