@@ -75,6 +75,13 @@ const insertGame = async ({players}:GameDB, db: SQLiteDatabase) => {
     await db.executeSql(query);
 }
 
+const deleteFromTable = async (id:Number, tableName:String, db: SQLiteDatabase) => {
+    const query =
+        `DELETE FROM ${tableName} WHERE id = ${id})`;
+
+    await db.executeSql(query);
+}
+
 const _initTables = async (db: SQLiteDatabase) => {
     await _initCategoriesTable(db);
     await _initPlayersTable(db);
@@ -214,7 +221,8 @@ const _dropDatabase = async (db: SQLiteDatabase) => {
     await db.executeSql(`DROP TABLE IF EXISTS ${TABLES.GAMES_CATEGORIES}`);
 }
 
-export { 
+export {
+    deleteFromTable,
     getDBConnection, 
     initDatabase,
     insertGame,
