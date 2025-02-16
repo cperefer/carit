@@ -1,0 +1,18 @@
+[
+    {
+        "id": 0,
+        "name": "Deportes"
+    },
+    {
+        "id": 1,
+        "name": "Ciencia y naturaleza"
+    },
+    {
+        "id": 2,
+        "name": "Cine y televisión"
+    },
+    {
+        "id": 3,
+        "name": "Historia"
+    }
+]
