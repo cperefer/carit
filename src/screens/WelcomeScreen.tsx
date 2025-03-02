@@ -33,6 +33,4 @@ const styles = StyleSheet.create({
     height: "18%",
     backgroundColor: "pink",
   }
-
-
 });
