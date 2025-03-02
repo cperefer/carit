@@ -10,4 +10,9 @@ const DATABASE = {
     }
 };
 
-export { DATABASE };
+const ROUTES = {
+    WELCOME: "welcome",
+    QUESTION: "question"
+}
+
+export { DATABASE, ROUTES };
