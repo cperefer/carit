@@ -20,3 +20,13 @@ export const globalStyles = StyleSheet.create({
         display: "flex",
     },
 });
+
+export const buttonStyles = StyleSheet.create({
+    welcome: {
+        ...globalStyles.flex,
+        ...globalStyles.center,
+        width: "50%",
+        height: "18%",
+        backgroundColor: "pink",
+    }
+})
