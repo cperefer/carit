@@ -207,7 +207,7 @@ const _insertQuestions = async (data: any, tableName: String, db: SQLiteDatabase
     const query =
         `INSERT OR REPLACE INTO ${tableName}(id, ${Object.keys(data[0]).join(', ')}) values` +
             data.map(
-                (item:QuestionDB, id:Number) => `(${id}, '${item.question}', '${item.answer1}', '${item.answer2}', '${item.answer3}', '${item.answer4}', ${item.category}, '${item.correctAnswer}')`).join(',')
+                (item:QuestionDB, id:Number) => `(${id}, '${item.title}', '${item.answer1}', '${item.answer2}', '${item.answer3}', '${item.answer4}', ${item.category}, '${item.correctAnswer}')`).join(',')
     
     await db.executeSql(query);
 }

@@ -8,6 +8,11 @@ interface Category {
     name: String,
 }
 
+interface Question {
+    question?: String
+}
+
+// Database types
 interface GameDB {
     id?: Number,
     startedAd?: Date,
@@ -27,7 +32,7 @@ interface PlayerDB {
 
 interface QuestionDB {
     id: Number,
-    question: Question,
+    title: String,
     answer1: String,
     answer2: String,
     answer3: String,
@@ -36,15 +41,62 @@ interface QuestionDB {
     correctAnswer: String
 }
 
-interface Question {
-    question?: String
+// Store types
+interface AllQuestionsStore {
+    questions: QuestionStore[],
+    setQuestions: (questionsInput:QuestionStore[]) => void
+}
+
+interface ActualQuestionStore {
+    question: QuestionDB,
+    setQuestion: (questionInput:QuestionDB) => void
+}
+
+interface GameStore {
+    actualQuestion: QuestionDB,
+    players: PlayerStore[],
+    questions: QuestionStore[],
+    questionsAnswered: Number,
+    score: ScoreStore[],
+    turn: Number,
+    setActualQuestion: (questionInput:QuestionDB) => void
+    setPlayers: (playersInput:PlayerStore[]) => void
+    setQuestions: (questionsInput:QuestionStore[]) => void,
+    setScore: (scoreInput:ScoreStore[]) => void,
+    setTurn: (turnInput:Number) => void,
+}
+
+interface PlayersStore {
+    players: PlayerStore[],
+    setPlayers: (playersInput:PlayerStore[]) => void
+}
+
+interface PlayerStore {
+    id: Number,
+    username: String,
+    avatar: String
+}
+
+interface ScoreStore {
+    player: Number,
+    points: Number,
+}
+
+interface QuestionStore {
+    question: QuestionDB
 }
 
 export type {
+    ActualQuestionStore,
+    AllQuestionsStore,
     AnswerOption,
     Category,
     GameDB,
+    GameStore,
     PlayerDB,
+    PlayersStore,
+    PlayerStore,
     Question,
     QuestionDB,
+    QuestionStore
 }
