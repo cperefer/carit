@@ -1,13 +1,31 @@
 import { PlayerDB } from '@/common/Types'
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import React, { useState } from 'react'
+import { Pressable, StyleSheet, Text } from 'react-native'
 
 export const PlayerComponent = ({username, avatar}:PlayerDB) => {
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handlePress = () => {
+    console.log("handlePress")
+
+    setIsSelected(!isSelected);
+
+    // TODO: METERLO EN EL ESTADO GLOBAL
+  }
+
+  const handleLongPress = () => {
+    console.log("handleLongPress")
+  }
+
   return (
-    <View style={styles.playerContainer}>
+    <Pressable 
+      style={{...styles.playerContainer, backgroundColor: isSelected ? "red" : "pink"}}
+      onPress = {() => handlePress()}
+      onLongPress = {() => handleLongPress()}
+    >
         <Text>{avatar}</Text>
         <Text style={{textAlign: "center"}}>{username}</Text>
-    </View>
+    </Pressable>
   )
 }
 
