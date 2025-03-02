@@ -11,7 +11,7 @@ export const NewGameComponent = () => {
     
     const handleNewGame = () => {
         console.log("Nueva Partida")
-        navigation.navigate(ROUTES.QUESTION)
+        navigation.navigate(ROUTES.PLAYERS_SELECTION)
     }
 
     return (

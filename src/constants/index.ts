@@ -11,6 +11,8 @@ const DATABASE = {
 };
 
 const ROUTES = {
+    CREATE_PLAYER: "createPlayer",
+    PLAYERS_SELECTION: "playersSelection",
     WELCOME: "welcome",
     QUESTION: "question"
 }

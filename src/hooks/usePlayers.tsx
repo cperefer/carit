@@ -26,7 +26,8 @@ export const usePlayers = () => {
             setPlayers(await getAll(DATABASE.TABLES.PLAYERS, db));
         }
 
-        populatePlayers().then(fetchPlayers);
+        // populatePlayers().then(fetchPlayers);
+        fetchPlayers();
     }, [players])
 
     return players;

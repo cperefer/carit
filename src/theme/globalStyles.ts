@@ -28,5 +28,13 @@ export const buttonStyles = StyleSheet.create({
         width: "50%",
         height: "18%",
         backgroundColor: "pink",
+    },
+    generic: {
+        ...globalStyles.flex,
+        ...globalStyles.center,
+        width: "30%",
+        height: "10%",
+        backgroundColor: "pink",
+        borderRadius: 12,
     }
 })

@@ -4,8 +4,12 @@ import { Pressable, StyleSheet, Text, View } from 'react-native'
 import { usePlayers } from '@/hooks/usePlayers';
 import { PlayerDB } from '@/common/Types';
 import { PlayerComponent } from '@/components';
+import { ParamListBase, useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { ROUTES } from '@/constants';
 
 export const PlayerScreen = () => {
+  const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
   const players = usePlayers();
   const [isCreatePlayerShown, setIsCreatePlayerShown] = useState(false);
 
@@ -26,7 +30,7 @@ export const PlayerScreen = () => {
         </View>
         <View style={[globalStyles.flex, globalStyles.center, styles.createPlayerContainer]}>
           <Pressable
-            // onPress cambiará la ruta a la pagina de creacion
+            onPress={() => navigation.navigate(ROUTES.CREATE_PLAYER)}
           >
             <Text>Crear jugador</Text>
           </Pressable>
