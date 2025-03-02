@@ -1,4 +1,4 @@
-import { globalStyles } from '@/theme/globalStyles';
+import { buttonStyles, globalStyles } from '@/theme/globalStyles';
 import React, { useEffect, useState } from 'react'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import { usePlayers } from '@/hooks/usePlayers';
@@ -16,15 +16,17 @@ export const PlayerScreen = () => {
   useEffect(() => { }, [isCreatePlayerShown])
   return (
     <View style={[globalStyles.full, globalStyles.flex, globalStyles.center, styles.screenContainer]}>
-      <View style={[globalStyles.flex, styles.mainContainer]}>
+      <View style={[globalStyles.flex, styles.playersContainer]}>
         <View style={[globalStyles.flex, styles.playerSelectionContainer]}>
           <Text style={{ textAlign: "center", paddingBottom: 2 }}>Selecciona un jugador</Text>
           <View style={[globalStyles.full, globalStyles.flex, styles.playerContainer]}>
             {
-              players.map(
-                (player: PlayerDB, index) =>
-                  <PlayerComponent key={index} username={player.username} avatar={player.avatar} />
-              )
+              players.length ? 
+                players.map(
+                  (player: PlayerDB, index) =>
+                    <PlayerComponent key={index} username={player.username} avatar={player.avatar} />
+                ) :
+                <Text>Cree un jugador para empezar</Text>
             }
           </View>
         </View>
@@ -36,6 +38,14 @@ export const PlayerScreen = () => {
           </Pressable>
         </View>
       </View>
+      <View style={[globalStyles.flex, globalStyles.center, styles.startGameContainer]}>
+        <Pressable
+          onPress={() => navigation.navigate("")}
+          style={[buttonStyles.generic, { width: "50%", height: "85%" }]}
+        >
+          <Text>Iniciar juego</Text>
+        </Pressable>
+      </View>
     </View>
   )
 }
@@ -44,9 +54,9 @@ const styles = StyleSheet.create({
   screenContainer: {
     backgroundColor: "red"
   },
-  mainContainer: {
-    width: "90%",
-    height: "60%",
+  playersContainer: {
+    width: "80%",
+    height: "50%",
     backgroundColor: "cyan",
     padding: 10,
     alignItems: "center"
@@ -54,7 +64,7 @@ const styles = StyleSheet.create({
   playerSelectionContainer: {
     width: "100%",
     height: "80%",
-    backgroundColor: "lightblue",
+    backgroundColor: "cyan",
     padding: 10
   },
   playerContainer: {
@@ -65,8 +75,13 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   createPlayerContainer: {
-    width: "100%",
+    width: "60%",
     height: "18%",
     backgroundColor: "lightgreen",
+  },
+  startGameContainer: {
+    width: "80%",
+    height: "10%",
+    backgroundColor: "lightblue",
   }
 });
