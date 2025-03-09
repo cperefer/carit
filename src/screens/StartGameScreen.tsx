@@ -16,9 +16,9 @@ export const StartGameScreen = () => {
     useAllQuestions();
     console.log("mimimi")
     useRandomQuestion();
-
+    console.log(actualQuestion)
     if (actualQuestion && actualQuestion.title) {
-        navigation.navigate(ROUTES.QUESTION);
+        navigation.navigate(ROUTES.NEXT_PLAYER);
     }
 
     return (

@@ -1,6 +1,8 @@
 import { ROUTES } from "@/constants"
 import { 
+    AnswerResultScreen,
     CreatePlayerComponent, 
+    NextPlayerScreen, 
     PlayerScreen, 
     QuestionScreen, 
     StartGameScreen, 
@@ -22,8 +24,20 @@ export const RootStack = createNativeStackNavigator({
                 headerShown: false,
             }
         },
+        [ROUTES.ANSWER_RESULT]: {
+            screen: AnswerResultScreen,
+            options: {
+                headerShown: false,
+            }
+        },
         [ROUTES.CREATE_PLAYER]: {
             screen: CreatePlayerComponent,
+            options: {
+                headerShown: false,
+            }
+        },
+        [ROUTES.NEXT_PLAYER]: {
+            screen: NextPlayerScreen,
             options: {
                 headerShown: false,
             }

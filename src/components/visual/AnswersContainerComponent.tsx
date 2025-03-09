@@ -9,7 +9,6 @@ export const AnswersContainerComponent = memo(() => {
 
   const answers = useAnswers();
 
-  console.log(answers)
   return (
     <View style={[globalStyles.flex, globalStyles.center, globalStyles.full, styles.style]}>
       <View style={[globalStyles.full, globalStyles.flex, globalStyles.center, styles.gridContainer]}>

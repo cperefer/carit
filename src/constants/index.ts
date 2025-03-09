@@ -11,7 +11,9 @@ const DATABASE = {
 };
 
 const ROUTES = {
+    ANSWER_RESULT: "answerResult",
     CREATE_PLAYER: "createPlayer",
+    NEXT_PLAYER: "nextPlayer",
     PLAYERS_SELECTION: "playersSelection",
     START_GAME: "startGame",
     QUESTION: "question",
