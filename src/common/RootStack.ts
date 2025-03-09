@@ -1,9 +1,12 @@
 import { ROUTES } from "@/constants"
-import { CreatePlayerComponent } from "@/screens/CreatePlayerScreen"
-import { PlayerScreen } from "@/screens/PlayersScreen"
-import { QuestionScreen } from "@/screens/QuestionScreen"
+import { 
+    CreatePlayerComponent, 
+    PlayerScreen, 
+    QuestionScreen, 
+    StartGameScreen, 
+    WelcomeScreen 
+} from "@/screens"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
-import { WelcomeScreen } from "@screens/WelcomeScreen"
 
 export const RootStack = createNativeStackNavigator({
     headerMode: 'none',
@@ -27,6 +30,12 @@ export const RootStack = createNativeStackNavigator({
         },
         [ROUTES.PLAYERS_SELECTION]: {
             screen: PlayerScreen,
+            options: {
+                headerShown: false,
+            }
+        },
+        [ROUTES.START_GAME]: {
+            screen: StartGameScreen,
             options: {
                 headerShown: false,
             }

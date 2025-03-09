@@ -37,7 +37,7 @@ export const PlayerScreen = () => {
       </View>
       <View style={[globalStyles.flex, globalStyles.center, styles.startGameContainer]}>
         <Pressable
-          onPress={() => navigation.navigate("")}
+          onPress={() => navigation.navigate(ROUTES.START_GAME)}
           style={[buttonStyles.generic, { width: "50%", height: "85%" }]}
         >
           <Text>Iniciar juego</Text>

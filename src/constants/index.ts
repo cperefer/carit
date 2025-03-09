@@ -13,8 +13,9 @@ const DATABASE = {
 const ROUTES = {
     CREATE_PLAYER: "createPlayer",
     PLAYERS_SELECTION: "playersSelection",
+    START_GAME: "startGame",
+    QUESTION: "question",
     WELCOME: "welcome",
-    QUESTION: "question"
 }
 
 export { DATABASE, ROUTES };
