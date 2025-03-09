@@ -17,7 +17,7 @@ export const useAllQuestions = () => {
             // }
 
             const result = await getAll(DATABASE.TABLES.QUESTIONS, db);
-
+            console.log(result)
             if (result.length > 0) {
                 setQuestions([...result]);
             }

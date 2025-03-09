@@ -89,7 +89,14 @@ interface ScoreStore {
 }
 
 interface QuestionStore {
-    question: QuestionDB
+    id: Number,
+    title: String,
+    answer1: String,
+    answer2: String,
+    answer3: String,
+    answer4: String,
+    category: Number,
+    correctAnswer: String
 }
 
 export type {

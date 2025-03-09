@@ -14,9 +14,10 @@ export const StartGameScreen = () => {
     const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
 
     useAllQuestions();
+    console.log("mimimi")
     useRandomQuestion();
 
-    if (actualQuestion.title) {
+    if (actualQuestion && actualQuestion.title) {
         navigation.navigate(ROUTES.QUESTION);
     }
 
