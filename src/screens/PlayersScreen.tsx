@@ -1,8 +1,7 @@
 import { buttonStyles, globalStyles } from '@/theme/globalStyles';
-import React, { useEffect, useState } from 'react'
 import { Pressable, StyleSheet, Text, View } from 'react-native'
 import { usePlayers } from '@/hooks/usePlayers';
-import { PlayerDB } from '@/common/Types';
+import { PlayerGame } from '@/common/Types';
 import { PlayerComponent } from '@/components';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -11,9 +10,7 @@ import { ROUTES } from '@/constants';
 export const PlayerScreen = () => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
   const players = usePlayers();
-  const [isCreatePlayerShown, setIsCreatePlayerShown] = useState(false);
 
-  useEffect(() => { }, [isCreatePlayerShown])
   return (
     <View style={[globalStyles.full, globalStyles.flex, globalStyles.center, styles.screenContainer]}>
       <View style={[globalStyles.flex, styles.playersContainer]}>
@@ -23,8 +20,8 @@ export const PlayerScreen = () => {
             {
               players.length ? 
                 players.map(
-                  (player: PlayerDB, index) =>
-                    <PlayerComponent key={index} username={player.username} avatar={player.avatar} />
+                  (player: PlayerGame, index) =>
+                    <PlayerComponent key={index} id={player.id} username={player.username} avatar={player.avatar} />
                 ) :
                 <Text>Cree un jugador para empezar</Text>
             }

@@ -30,6 +30,12 @@ interface PlayerDB {
     numGames?: Number,
 }
 
+interface PlayerGame {
+    id: Number,
+    username: String,
+    avatar: String
+}
+
 interface QuestionDB {
     id: Number,
     title: String,
@@ -94,6 +100,7 @@ export type {
     GameDB,
     GameStore,
     PlayerDB,
+    PlayerGame,
     PlayersStore,
     PlayerStore,
     Question,

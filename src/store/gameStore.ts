@@ -2,7 +2,7 @@ import { GameStore, PlayerStore, QuestionDB, QuestionStore } from "@/common/Type
 import { create } from "zustand";
 
 
-export const gameStore = create<GameStore>((set, get) => ({
+export const useGameStore = create<GameStore>((set, get) => ({
     actualQuestion: {
         id: 0,
         title: "",
