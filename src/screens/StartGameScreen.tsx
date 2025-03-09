@@ -1,14 +1,36 @@
+import { ROUTES } from '@/constants'
+import { useAllQuestions } from '@/hooks/useAllQuestions'
+import { useRandomQuestion } from '@/hooks/useRandomQuestion'
+import { useGameStore } from '@/store/gameStore'
+import { globalStyles } from '@/theme/globalStyles'
 import { Text } from '@react-navigation/elements'
+import { ParamListBase, useNavigation } from '@react-navigation/native'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack'
 import React from 'react'
-import { View } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { StyleSheet, View } from 'react-native'
 
 export const StartGameScreen = () => {
+    const actualQuestion = useGameStore(state => state.actualQuestion);
+    const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
+
+    useAllQuestions();
+    useRandomQuestion();
+
+    if (actualQuestion.title) {
+        navigation.navigate(ROUTES.QUESTION);
+    }
+
     return (
-        <SafeAreaView>
-            <View>
-                <Text>Vamos que nos vamos</Text>
+        <View style={[globalStyles.full, globalStyles.flex, globalStyles.center, styles.welcomeContainer]}>
+            <View style={[globalStyles.flex, globalStyles.center, globalStyles.mainContainer]}>
+                <Text>Preparando la partida</Text>
             </View>
-        </SafeAreaView>
+        </View>
     )
 }
+
+const styles = StyleSheet.create({
+  welcomeContainer: {
+      backgroundColor: "red"
+  },
+});

@@ -19,6 +19,13 @@ export const globalStyles = StyleSheet.create({
     flex: {
         display: "flex",
     },
+    mainContainer: {
+        width: "90%",
+        height: "60%",
+        backgroundColor: "cyan",
+        justifyContent: "space-around",
+        padding: 10
+    }
 });
 
 export const buttonStyles = StyleSheet.create({

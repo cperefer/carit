@@ -91,8 +91,8 @@ const _initTables = async (db: SQLiteDatabase) => {
 }
 
 const _initData = async (db: SQLiteDatabase) => {
-    _initCategories(db);
-    _initQuestions(db);
+    await _initCategories(db);
+    await _initQuestions(db);
 }
 
 const _initCategoriesTable = async (db: SQLiteDatabase) => {
@@ -137,7 +137,7 @@ const _initQuestionsTable = async (db: SQLiteDatabase) => {
     await db.executeSql(
         `CREATE TABLE IF NOT EXISTS ${TABLES.QUESTIONS}(
             id INTEGER PRIMARY KEY,
-            question TEXT NOT NULL,
+            title TEXT NOT NULL,
             answer1 TEXT NOT NULL,
             answer2 TEXT NOT NULL,
             answer3 TEXT NOT NULL,
@@ -186,12 +186,12 @@ const _initGamesCategoriesTable = async (db: SQLiteDatabase) => {
 
 const _initCategories = async (db: SQLiteDatabase) => {
     const data = require('@/resources/categories.json');
-    await _insertCategories(data, db);
+    _insertCategories(data, db);
 }
 
 const _initQuestions = async (db: SQLiteDatabase) => {
     const data = require('@/resources/questions.json');
-    await _insertQuestions(data, TABLES.QUESTIONS , db);
+    _insertQuestions(data, TABLES.QUESTIONS , db);
 }
 
 const _insertCategories = async (data: any, db: SQLiteDatabase) => {
@@ -200,15 +200,18 @@ const _insertCategories = async (data: any, db: SQLiteDatabase) => {
             data.map(
                 (item:Category) => `(${item.id}, '${item.name}')`).join(',')
     
-    await db.executeSql(query);
+                await db.executeSql(query);
 }
 
 const _insertQuestions = async (data: any, tableName: String, db: SQLiteDatabase) => {
     const query =
         `INSERT OR REPLACE INTO ${tableName}(id, ${Object.keys(data[0]).join(', ')}) values` +
             data.map(
-                (item:QuestionDB, id:Number) => `(${id}, '${item.title}', '${item.answer1}', '${item.answer2}', '${item.answer3}', '${item.answer4}', ${item.category}, '${item.correctAnswer}')`).join(',')
+                (item:QuestionDB, id:Number) =>
+                    `(${id}, '${item.title}', '${item.answer1}', '${item.answer2}', '${item.answer3}', '${item.answer4}', ${item.category}, '${item.correctAnswer}')`
+            ).join(', ')
     
+                console.log(query)
     await db.executeSql(query);
 }
 
@@ -230,4 +233,5 @@ export {
     getAll, 
     getBy,
     getLike,
+    _initQuestions
 };
