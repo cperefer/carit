@@ -2,9 +2,10 @@ import { ContinueGameComponent, NewGameComponent, RankingComponent, SettingsComp
 import { globalStyles } from '@/theme/globalStyles';
 import React from 'react'
 import { StyleSheet, View } from 'react-native'
+import { useInitDatabase } from '@/hooks/useInitDatabase';
 
 export const WelcomeScreen = () => {
-
+  // useInitDatabase();
   return (
     <View style={[globalStyles.full, globalStyles.flex, globalStyles.center, styles.welcomeContainer]}>
         <View style={[globalStyles.flex, globalStyles.center, styles.buttonsContainer]}>

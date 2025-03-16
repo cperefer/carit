@@ -1,6 +1,6 @@
 [
     {
-        "question": "¿En qué año ganó Argentina su primer Mundial de Fútbol?",
+        "title": "¿En qué año ganó Argentina su primer Mundial de Fútbol?",
         "answer1": "1978",
         "answer2": "1986",
         "answer3": "2002",
@@ -9,7 +9,7 @@
         "correctAnswer": "1"
     },
     {
-        "question": "¿Cuál es el metal más abundante en la corteza terrestre?",
+        "title": "¿Cuál es el metal más abundante en la corteza terrestre?",
         "answer1": "Hierro",
         "answer2": "Aluminio",
         "answer3": "Cobre",
@@ -18,7 +18,7 @@
         "correctAnswer": "2"
     },
     {
-        "question": "¿Cuál es la película con más premios Oscar ganados?",
+        "title": "¿Cuál es la película con más premios Oscar ganados?",
         "answer1": "Titanic",
         "answer2": "El Señor de los Anillos: El Retorno del Rey",
         "answer3": "Ben-Hur",
@@ -27,7 +27,7 @@
         "correctAnswer": "2"
     },
     {
-        "question": "¿Quién fue el primer presidente de los Estados Unidos?",
+        "title": "¿Quién fue el primer presidente de los Estados Unidos?",
         "answer1": "Thomas Jefferson",
         "answer2": "John Adams",
         "answer3": "George Washington",
@@ -36,7 +36,7 @@
         "correctAnswer": "3"
     },
     {
-        "question": "¿Cuántos jugadores conforman un equipo de fútbol en el campo?",
+        "title": "¿Cuántos jugadores conforman un equipo de fútbol en el campo?",
         "answer1": "9",
         "answer2": "10",
         "answer3": "11",
@@ -45,7 +45,7 @@
         "correctAnswer": "3"
     },
     {
-        "question": "¿Qué científico formuló la teoría de la relatividad?",
+        "title": "¿Qué científico formuló la teoría de la relatividad?",
         "answer1": "Isaac Newton",
         "answer2": "Nikola Tesla",
         "answer3": "Albert Einstein",
@@ -54,7 +54,7 @@
         "correctAnswer": "3"
     },
     {
-        "question": "¿En qué año se estrenó la película \"El Padrino\"?",
+        "title": "¿En qué año se estrenó la película \"El Padrino\"?",
         "answer1": "1972",
         "answer2": "1980",
         "answer3": "1965",
@@ -63,7 +63,7 @@
         "correctAnswer": "1"
     },
     {
-        "question": "¿En qué año comenzó la Segunda Guerra Mundial?",
+        "title": "¿En qué año comenzó la Segunda Guerra Mundial?",
         "answer1": "1914",
         "answer2": "1939",
         "answer3": "1945",
@@ -72,7 +72,7 @@
         "correctAnswer": "2"
     },
     {
-        "question": "¿Qué selección ha ganado más Copas del Mundo de fútbol?",
+        "title": "¿Qué selección ha ganado más Copas del Mundo de fútbol?",
         "answer1": "Argentina",
         "answer2": "Alemania",
         "answer3": "Brasil",
@@ -81,7 +81,7 @@
         "correctAnswer": "3"
     },
     {
-        "question": "¿Qué planeta es conocido como el planeta rojo?",
+        "title": "¿Qué planeta es conocido como el planeta rojo?",
         "answer1": "Júpiter",
         "answer2": "Marte",
         "answer3": "Venus",
@@ -90,7 +90,7 @@
         "correctAnswer": "2"
     },
     {
-        "question": "¿Cuál es el río más largo del mundo?",
+        "title": "¿Cuál es el río más largo del mundo?",
         "answer1": "Amazonas",
         "answer2": "Nilo",
         "answer3": "Misisipi",
@@ -99,7 +99,7 @@
         "correctAnswer": "1"
     },
     {
-        "question": "¿Qué actor interpretó a Iron Man en el Universo Cinematográfico de Marvel?",
+        "title": "¿Qué actor interpretó a Iron Man en el Universo Cinematográfico de Marvel?",
         "answer1": "Chris Evans",
         "answer2": "Robert Downey Jr.",
         "answer3": "Chris Hemsworth",
@@ -108,7 +108,7 @@
         "correctAnswer": "2"
     },
     {
-        "question": "¿Cuál es el océano más grande del mundo?",
+        "title": "¿Cuál es el océano más grande del mundo?",
         "answer1": "Atlántico",
         "answer2": "Índico",
         "answer3": "Pacífico",
@@ -117,7 +117,7 @@
         "correctAnswer": "3"
     },
     {
-        "question": "¿Quién dirigió la película \"Pulp Fiction\"?",
+        "title": "¿Quién dirigió la película \"Pulp Fiction\"?",
         "answer1": "Steven Spielberg",
         "answer2": "Quentin Tarantino",
         "answer3": "Martin Scorsese",
@@ -126,7 +126,7 @@
         "correctAnswer": "2"
     },
     {
-        "question": "¿En qué año cayó el Muro de Berlín?",
+        "title": "¿En qué año cayó el Muro de Berlín?",
         "answer1": "1985",
         "answer2": "1987",
         "answer3": "1989",
@@ -135,7 +135,7 @@
         "correctAnswer": "3"
     },
     {
-        "question": "¿Cuál es el país con más Copas del Mundo de fútbol ganadas?",
+        "title": "¿Cuál es el país con más Copas del Mundo de fútbol ganadas?",
         "answer1": "Argentina",
         "answer2": "Alemania",
         "answer3": "Brasil",
@@ -144,7 +144,7 @@
         "correctAnswer": "3"
     },
     {
-        "question": "¿Qué científico descubrió la penicilina?",
+        "title": "¿Qué científico descubrió la penicilina?",
         "answer1": "Marie Curie",
         "answer2": "Alexander Fleming",
         "answer3": "Louis Pasteur",
@@ -153,7 +153,7 @@
         "correctAnswer": "2"
     },
     {
-        "question": "¿Qué película ganó el Oscar a Mejor Película en 1994?",
+        "title": "¿Qué película ganó el Oscar a Mejor Película en 1994?",
         "answer1": "Forrest Gump",
         "answer2": "Pulp Fiction",
         "answer3": "El Rey León",
@@ -162,7 +162,7 @@
         "correctAnswer": "1"
     },
     {
-        "question": "¿Quién fue el líder de la Revolución Rusa de 1917?",
+        "title": "¿Quién fue el líder de la Revolución Rusa de 1917?",
         "answer1": "Lenin",
         "answer2": "Stalin",
         "answer3": "Trotsky",
@@ -171,7 +171,7 @@
         "correctAnswer": "1"
     },
     {
-        "question": "¿Cuántos anillos de la NBA ganó Michael Jordan con los Chicago Bulls?",
+        "title": "¿Cuántos anillos de la NBA ganó Michael Jordan con los Chicago Bulls?",
         "answer1": "4",
         "answer2": "5",
         "answer3": "6",
@@ -180,7 +180,7 @@
         "correctAnswer": "3"
     },
     {
-        "question": "¿Qué gas es fundamental para la respiración de los seres humanos?",
+        "title": "¿Qué gas es fundamental para la respiración de los seres humanos?",
         "answer1": "Oxígeno",
         "answer2": "Nitrógeno",
         "answer3": "Dióxido de carbono",
@@ -189,7 +189,7 @@
         "correctAnswer": "1"
     },
     {
-        "question": "¿Qué actor interpretó a Jack en \"Titanic\"?",
+        "title": "¿Qué actor interpretó a Jack en \"Titanic\"?",
         "answer1": "Brad Pitt",
         "answer2": "Leonardo DiCaprio",
         "answer3": "Tom Cruise",
