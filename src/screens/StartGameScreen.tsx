@@ -10,14 +10,12 @@ import React from 'react'
 import { StyleSheet, View } from 'react-native'
 
 export const StartGameScreen = () => {
-    const actualQuestion = useGameStore(state => state.actualQuestion);
+    const questions = useGameStore(state => state.questions);
     const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
 
     useAllQuestions();
-    console.log("mimimi")
-    useRandomQuestion();
-    console.log(actualQuestion)
-    if (actualQuestion && actualQuestion.title) {
+
+    if (questions && questions.length) {
         navigation.navigate(ROUTES.NEXT_PLAYER);
     }
 

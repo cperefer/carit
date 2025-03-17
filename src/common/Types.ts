@@ -65,11 +65,13 @@ interface GameStore {
     questionsAnswered: Number,
     score: ScoreStore[],
     turn: Number,
+    round: Number,
     setActualQuestion: (questionInput:QuestionDB) => void
     setPlayers: (playersInput:PlayerStore[]) => void
     setQuestions: (questionsInput:QuestionStore[]) => void,
     setScore: (scoreInput:ScoreStore[]) => void,
     setTurn: (turnInput:Number) => void,
+    setRound: (roundInput:Number) => void,
 }
 
 interface PlayersStore {

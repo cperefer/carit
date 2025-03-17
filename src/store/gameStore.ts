@@ -18,9 +18,11 @@ export const useGameStore = create<GameStore>((set, get) => ({
     questionsAnswered: 0,
     score: [],
     turn: 0,
+    round: 1,
     setActualQuestion: (questionInput:QuestionDB) => set({actualQuestion: questionInput}),
     setPlayers: (playersInput:PlayerStore[]) => set({players: playersInput}),
     setQuestions: (questionsInput:QuestionStore[]) => set({questions: questionsInput}),
     setScore: (ScoreInput) => set({score: ScoreInput}),
-    setTurn: (turnInput) => set({turn: turnInput})
+    setTurn: (turnInput) => set({turn: turnInput}),
+    setRound: (roundInput) => set({round: roundInput})
 }))

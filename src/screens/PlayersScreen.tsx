@@ -6,10 +6,21 @@ import { PlayerComponent } from '@/components';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { ROUTES } from '@/constants';
+import { useGameStore } from '@/store/gameStore';
+import { lessThanTwoPlayersAlert } from '@/common/Alerts';
 
 export const PlayerScreen = () => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
   const players = usePlayers();
+  const selectedPlayers = useGameStore(state => state.players);
+
+  const handleInitGame = () => {
+    if (selectedPlayers.length > 1) {
+      navigation.navigate(ROUTES.START_GAME)
+    } else {
+      lessThanTwoPlayersAlert();
+    }
+  }
 
   return (
     <View style={[globalStyles.full, globalStyles.flex, globalStyles.center, styles.screenContainer]}>
@@ -18,7 +29,7 @@ export const PlayerScreen = () => {
           <Text style={{ textAlign: "center", paddingBottom: 2 }}>Selecciona un jugador</Text>
           <View style={[globalStyles.full, globalStyles.flex, styles.playerContainer]}>
             {
-              players.length ? 
+              players.length ?
                 players.map(
                   (player: PlayerGame, index) =>
                     <PlayerComponent key={index} id={player.id} username={player.username} avatar={player.avatar} />
@@ -37,7 +48,7 @@ export const PlayerScreen = () => {
       </View>
       <View style={[globalStyles.flex, globalStyles.center, styles.startGameContainer]}>
         <Pressable
-          onPress={() => navigation.navigate(ROUTES.START_GAME)}
+          onPress={() => handleInitGame()}
           style={[buttonStyles.generic, { width: "50%", height: "85%" }]}
         >
           <Text>Iniciar juego</Text>

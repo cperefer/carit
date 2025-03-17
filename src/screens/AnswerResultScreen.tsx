@@ -1,17 +1,22 @@
 import { ROUTES } from '@/constants'
-import { useRandomQuestion } from '@/hooks/useRandomQuestion'
+import { useChangeTurn } from '@/hooks/useChangeTurn'
 import { buttonStyles, globalStyles } from '@/theme/globalStyles'
 import { Text } from '@react-navigation/elements'
 import { ParamListBase, useNavigation } from '@react-navigation/native'
 import { NativeStackNavigationProp } from '@react-navigation/native-stack'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Pressable, StyleSheet, View } from 'react-native'
 
-export const AnswerResultScreen = (props:any) => {
+export const AnswerResultScreen = (props: any) => {
     const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
-    const {correctAnswer} = props.route.params;
-    
-    // useRandomQuestion();
+
+    const { correctAnswer } = props.route.params;
+
+    const changeTurn = useChangeTurn();
+
+    useEffect(() => {
+        changeTurn();
+    }, []);
 
     const handleContinue = () => {
         console.log('continue')
