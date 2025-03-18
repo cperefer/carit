@@ -11,13 +11,29 @@ export const useAllQuestions = () => {
         const fetchQuestions = async () => {
             const db = await getDBConnection();
 
-            const result = await getAll(DATABASE.TABLES.QUESTIONS, db);
+            if (!isDBReady) {
+                console.log("⏳ Base de datos aún no lista. Esperando...");
+                return;
+            }
 
+            const result = await getAll(DATABASE.TABLES.QUESTIONS, db);
+            console.log(result)
             if (result.length > 0) {
-                setQuestions(result);
+                setQuestions([...result]);
             }
         };
 
         fetchQuestions();
+    }, [isDBReady]); // Ahora solo se ejecuta cuando la BD está lista
+
+    useEffect(() => {
+        const initDB = async () => {
+            const db = await getDBConnection();
+            await _initQuestions(db);
+            setIsDBReady(true); // 🔥 Marcar que la BD está lista
+        };
+
+        initDB();
     }, []);
+
 };
