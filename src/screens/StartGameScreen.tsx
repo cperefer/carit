@@ -1,6 +1,7 @@
 import { ROUTES } from '@/constants'
 import { useAllQuestions } from '@/hooks/useAllQuestions'
 import { useRandomQuestion } from '@/hooks/useRandomQuestion'
+import { useRemoveBackHandler } from '@/hooks/useRemoveBackHandler'
 import { useGameStore } from '@/store/gameStore'
 import { globalStyles } from '@/theme/globalStyles'
 import { Text } from '@react-navigation/elements'
@@ -13,6 +14,7 @@ export const StartGameScreen = () => {
     const questions = useGameStore(state => state.questions);
     const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
 
+    useRemoveBackHandler();
     useAllQuestions();
 
     if (questions && questions.length) {

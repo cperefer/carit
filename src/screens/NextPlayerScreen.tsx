@@ -1,5 +1,6 @@
 import { ROUTES } from '@/constants';
 import { useRandomQuestion } from '@/hooks/useRandomQuestion';
+import { useRemoveBackHandler } from '@/hooks/useRemoveBackHandler';
 import { useGameStore } from '@/store/gameStore';
 import { buttonStyles, globalStyles } from '@/theme/globalStyles';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
@@ -13,7 +14,10 @@ export const NextPlayerScreen = () => {
     const turn = useGameStore(state => state.turn);
 
     const {username} = players[Number(turn)]
+
+    useRemoveBackHandler();
     useRandomQuestion();
+
     const handleContinue = () => {
         navigation.navigate(ROUTES.QUESTION);
     }

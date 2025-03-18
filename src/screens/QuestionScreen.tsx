@@ -1,10 +1,13 @@
 import React from 'react'
 import { StyleSheet, useWindowDimensions, View } from 'react-native'
 import { AnswerComponent, QuestionComponent } from '../components';
+import { useRemoveBackHandler } from '@/hooks/useRemoveBackHandler';
 
 
 export const QuestionScreen = () => {
   const {width, height} = useWindowDimensions();
+
+  useRemoveBackHandler();
 
   const styles = StyleSheet.create({
     containerQuestion: {
