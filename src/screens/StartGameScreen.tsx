@@ -1,6 +1,5 @@
 import { ROUTES } from '@/constants'
 import { useAllQuestions } from '@/hooks/useAllQuestions'
-import { useRandomQuestion } from '@/hooks/useRandomQuestion'
 import { useRemoveBackHandler } from '@/hooks/useRemoveBackHandler'
 import { useGameStore } from '@/store/gameStore'
 import { globalStyles } from '@/theme/globalStyles'
