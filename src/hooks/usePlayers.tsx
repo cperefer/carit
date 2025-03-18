@@ -28,7 +28,7 @@ export const usePlayers = () => {
 
         // populatePlayers().then(fetchPlayers);
         fetchPlayers();
-    }, [])
+    }, [players])
 
     return players;
 }
