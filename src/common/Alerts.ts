@@ -1,4 +1,4 @@
-import { Alert } from "react-native";
+import { Alert, BackHandler } from "react-native";
 
 const lessThanTwoPlayersAlert = () => {
     Alert.alert(
@@ -10,6 +10,27 @@ const lessThanTwoPlayersAlert = () => {
     );
 }
 
+const onBackPressAlert = () => {
+    Alert.alert(
+      'Salir',
+      '¿Deseas salir?',
+      [
+        {
+          text: 'No',
+          onPress: () => {
+            // Do nothing
+          },
+          style: 'cancel',
+        },
+        { text: 'Si', onPress: () => BackHandler.exitApp() },
+      ],
+      { cancelable: false }
+    );
+
+    return true;
+  };
+
 export {
-    lessThanTwoPlayersAlert
+    lessThanTwoPlayersAlert,
+    onBackPressAlert
 }
