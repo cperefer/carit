@@ -8,9 +8,12 @@ export const useRandomQuestion = () => {
   const setActualQuestion = useGameStore(state => state.setActualQuestion);
 
   useEffect(() => {
+    console.log("question " + questions.length)
+
     if (questions.length === 0) return;
   
     const getRandomQuestion =  () => {
+      console.log("useRandomQuestion")
         const result = questions[Math.floor(Math.random() * questions.length)];
         setActualQuestion(result);
         

@@ -1,5 +1,6 @@
 import { ROUTES } from '@/constants'
 import { useChangeTurn } from '@/hooks/useChangeTurn'
+import { useGameStore } from '@/store/gameStore'
 import { buttonStyles, globalStyles } from '@/theme/globalStyles'
 import { Text } from '@react-navigation/elements'
 import { ParamListBase, useNavigation } from '@react-navigation/native'
@@ -8,19 +9,25 @@ import React, { useEffect } from 'react'
 import { Pressable, StyleSheet, View } from 'react-native'
 
 export const AnswerResultScreen = (props: any) => {
+    const turn = useGameStore(state => state.turn);
+    const players = useGameStore(state => state.players);
     const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
 
     const { correctAnswer } = props.route.params;
 
     const changeTurn = useChangeTurn();
 
-    useEffect(() => {
-        changeTurn();
-    }, []);
+    // useEffect(() => {
+    //     changeTurn();
+    // }, []);
 
     const handleContinue = () => {
-        console.log('continue')
-        navigation.navigate(ROUTES.NEXT_PLAYER);
+        if (Number(turn) < players.length - 1) {
+            changeTurn();
+            navigation.navigate(ROUTES.NEXT_PLAYER);
+        } else {
+            navigation.navigate(ROUTES.ROUND_RESULTS);
+        }
     }
 
     return (

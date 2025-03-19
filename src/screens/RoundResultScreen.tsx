@@ -1,4 +1,5 @@
 import { ROUTES } from '@/constants'
+import { useChangeRound } from '@/hooks/useChangeRound'
 import { useGameStore } from '@/store/gameStore'
 import { buttonStyles, globalStyles } from '@/theme/globalStyles'
 import { Text } from '@react-navigation/elements'
@@ -11,8 +12,10 @@ export const RoundResultScreen = () => {
     const round = useGameStore(state => state.round);
     const score = useGameStore(state => state.score);
     const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
+    const changeRound = useChangeRound();
 
     const handleNextRound = () => {
+        changeRound();
         navigation.navigate(ROUTES.NEXT_PLAYER);
     }
 
