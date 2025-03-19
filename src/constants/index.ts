@@ -21,4 +21,10 @@ const ROUTES = {
     WELCOME: "welcome",
 }
 
-export { DATABASE, ROUTES };
+const POINTS_CORRECT_ANSWER = 100;
+
+export { 
+    DATABASE,
+    POINTS_CORRECT_ANSWER,
+    ROUTES ,
+};

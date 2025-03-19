@@ -1,5 +1,6 @@
 import { ROUTES } from '@/constants'
 import { useChangeTurn } from '@/hooks/useChangeTurn'
+import { useUpdateScore } from '@/hooks/useUpdateScore'
 import { useGameStore } from '@/store/gameStore'
 import { buttonStyles, globalStyles } from '@/theme/globalStyles'
 import { Text } from '@react-navigation/elements'
@@ -16,10 +17,12 @@ export const AnswerResultScreen = (props: any) => {
     const { correctAnswer } = props.route.params;
 
     const changeTurn = useChangeTurn();
+    const updateScore = useUpdateScore(correctAnswer);
 
-    // useEffect(() => {
-    //     changeTurn();
-    // }, []);
+    useEffect(() => {
+        // changeTurn();
+        updateScore();
+    }, []);
 
     const handleContinue = () => {
         if (Number(turn) < players.length - 1) {
