@@ -1,4 +1,4 @@
-import { GameStore, PlayerStore, QuestionDB, QuestionStore } from "@/common/Types";
+import { GameStore, PlayerStore, QuestionDB, QuestionStore, ScoreStore } from "@/common/Types";
 import { create } from "zustand";
 
 
@@ -22,7 +22,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
     setActualQuestion: (questionInput:QuestionDB) => set({actualQuestion: questionInput}),
     setPlayers: (playersInput:PlayerStore[]) => set({players: playersInput}),
     setQuestions: (questionsInput:QuestionStore[]) => set({questions: questionsInput}),
-    setScore: (ScoreInput) => set({score: ScoreInput}),
+    setScore: (ScoreInput:ScoreStore[]) => set({score: ScoreInput}),
     setTurn: (turnInput) => set({turn: turnInput}),
     setRound: (roundInput) => set({round: roundInput})
 }))

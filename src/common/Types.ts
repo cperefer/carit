@@ -87,6 +87,7 @@ interface PlayerStore {
 
 interface ScoreStore {
     player: Number,
+    username: String,
     points: Number,
 }
 
@@ -112,6 +113,7 @@ export type {
     PlayerGame,
     PlayersStore,
     PlayerStore,
+    ScoreStore,
     Question,
     QuestionDB,
     QuestionStore

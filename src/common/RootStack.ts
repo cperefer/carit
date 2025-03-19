@@ -5,6 +5,7 @@ import {
     NextPlayerScreen, 
     PlayerScreen, 
     QuestionScreen, 
+    RoundResultScreen, 
     StartGameScreen, 
     WelcomeScreen 
 } from "@/screens"
@@ -44,6 +45,12 @@ export const RootStack = createNativeStackNavigator({
         },
         [ROUTES.PLAYERS_SELECTION]: {
             screen: PlayerScreen,
+            options: {
+                headerShown: false,
+            }
+        },
+        [ROUTES.ROUND_RESULTS]: {
+            screen: RoundResultScreen,
             options: {
                 headerShown: false,
             }

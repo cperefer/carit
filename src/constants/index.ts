@@ -15,6 +15,7 @@ const ROUTES = {
     CREATE_PLAYER: "createPlayer",
     NEXT_PLAYER: "nextPlayer",
     PLAYERS_SELECTION: "playersSelection",
+    ROUND_RESULTS: "roundResults",
     START_GAME: "startGame",
     QUESTION: "question",
     WELCOME: "welcome",
