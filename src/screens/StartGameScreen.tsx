@@ -1,5 +1,6 @@
 import { ROUTES } from '@/constants'
 import { useAllQuestions } from '@/hooks/useAllQuestions'
+import { useInitScore } from '@/hooks/useInitScore'
 import { useRemoveBackHandler } from '@/hooks/useRemoveBackHandler'
 import { useGameStore } from '@/store/gameStore'
 import { globalStyles } from '@/theme/globalStyles'
@@ -15,6 +16,7 @@ export const StartGameScreen = () => {
 
     useRemoveBackHandler();
     useAllQuestions();
+    useInitScore();
 
     useEffect(() => {
         if (questions && questions.length) {

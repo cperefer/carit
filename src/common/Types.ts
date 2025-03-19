@@ -88,7 +88,7 @@ interface PlayerStore {
 interface ScoreStore {
     player: Number,
     username: String,
-    points: Number,
+    points: number,
 }
 
 interface QuestionStore {
