@@ -25,7 +25,7 @@ export const RoundResultScreen = () => {
                 <Text>Fin de la ronda {round.toString()}!</Text>
                 {
                     score.length && score.map((player) => 
-                        <Text>{player.username}: {player.points.toString()}</Text>
+                        <Text key={Number(player.player)}>{player.username}: {player.points.toString()}</Text>
                     ) 
                 }
                 <Pressable style={buttonStyles.welcome} onPress={handleNextRound}>

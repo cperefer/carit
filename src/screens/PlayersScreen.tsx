@@ -11,7 +11,7 @@ import { lessThanTwoPlayersAlert } from '@/common/Alerts';
 
 export const PlayerScreen = () => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
-  const players = usePlayers();
+  const {players} = usePlayers();
   const selectedPlayers = useGameStore(state => state.players);
 
   const handleInitGame = () => {

@@ -20,7 +20,6 @@ export const AnswerResultScreen = (props: any) => {
     const updateScore = useUpdateScore(correctAnswer);
 
     useEffect(() => {
-        // changeTurn();
         updateScore();
     }, []);
 

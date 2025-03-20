@@ -1,4 +1,5 @@
 import { useCreatePlayer } from '@/hooks/useCreatePlayer';
+import { usePlayers } from '@/hooks/usePlayers';
 import { buttonStyles, globalStyles } from '@/theme/globalStyles';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
@@ -7,18 +8,17 @@ import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native'
 
 export const CreatePlayerComponent = () => {
     const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
+    const {addPlayer, refreshPlayers} = usePlayers();
 
     const [avatar, setAvatar] = useState("");
     const [username, setUsername] = useState("");
-
-    const createPlayer = useCreatePlayer();
 
     const onChangeText = (text: string) => {
         setUsername(text)
     }
 
-    const handleSubmit = () => {
-        createPlayer({ username, avatar });
+    const handleSubmit = async () => {
+        addPlayer(username, avatar);
         navigation.goBack();
     }
 
